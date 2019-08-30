@@ -12,8 +12,8 @@ require_once 'classes/class-wsuwp-lodge.php';
 require_once 'classes/class-shortcodes.php';
 
 // Actions
-add_action( 'customize_register', 'wsuLodge::add_social_to_customizer' );
-add_action( 'customize_register', 'wsuLodge::add_global_options_to_customizer' );
+add_action( 'customize_register', 'wsuwpLodge::add_social_to_customizer' );
+add_action( 'customize_register', 'wsuwpLodge::add_global_options_to_customizer' );
 
 
 // Underscores Starter

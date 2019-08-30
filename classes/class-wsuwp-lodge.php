@@ -3,11 +3,10 @@
 /**
  * Helper class for theme functions.
  *
- * @class wsuLodge
+ * @class wsuwpLodge
  */
-final class wsuLodge {
+final class wsuwpLodge {
 
-		
   /**
   * Enqueues scripts and styles.
   *
