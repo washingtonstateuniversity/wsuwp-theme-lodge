@@ -70,9 +70,9 @@ final class wsuLodge {
     // Create Section
     //
     $wp_customize->add_section( 'wsulodge_social_media' , array(
-        'title'      => __( 'Social Media', 'wsuLodge' ),
-        'priority'   => 30,
-        'description'    => __( 'Include social media links to be used throughout the website.', 'wsuLodge')
+        'title'      => __( 'Social Media', 'wsuwp-lodge' ),
+        'priority'   => 100,
+        'description'    => __( 'Include social media links to be used throughout the website.', 'wsuwp-lodge')
     ) );
 
     //
@@ -84,12 +84,12 @@ final class wsuLodge {
     ) );
 
     $wp_customize->add_control( 'wsulodge_social_media_facebook', array(
-        'label'         => __( 'Facebook', 'wsuLodge' ),
+        'label'         => __( 'Facebook', 'wsuwp-lodge' ),
         'section'       => 'wsulodge_social_media',
         'settings'      => 'wsulodge_social_media_facebook',
         'type'          => 'text',
         'input_attrs'   => array( 
-            'placeholder'   => __( 'https://facebook.com/WSUPullman', 'wsuLodge')
+            'placeholder'   => __( 'https://facebook.com/WSUPullman', 'wsuwp-lodge')
         )
     ) );
 
@@ -107,7 +107,7 @@ final class wsuLodge {
         'settings'      => 'wsulodge_social_media_twitter',
         'type'          => 'text',
         'input_attrs'   => array( 
-            'placeholder'   => __( 'https://twitter.com/WSUPullman', 'wsuLodge')
+            'placeholder'   => __( 'https://twitter.com/WSUPullman', 'wsuwp-lodge')
         )
     ) );
 
@@ -125,7 +125,7 @@ final class wsuLodge {
         'settings'      => 'wsulodge_social_media_youtube',
         'type'          => 'text',
         'input_attrs'   => array( 
-            'placeholder'   => __( 'https://www.youtube.com/user/washingtonstateuniv', 'wsuLodge')
+            'placeholder'   => __( 'https://www.youtube.com/user/washingtonstateuniv', 'wsuwp-lodge')
         )
     ) );
 
@@ -143,7 +143,7 @@ final class wsuLodge {
         'settings'      => 'wsulodge_social_media_instagram',
         'type'          => 'text',
         'input_attrs'   => array( 
-            'placeholder'   => __( 'https://www.instagram.com/wsupullman/', 'wsuLodge')
+            'placeholder'   => __( 'https://www.instagram.com/wsupullman/', 'wsuwp-lodge')
         )
     ) );
   }
