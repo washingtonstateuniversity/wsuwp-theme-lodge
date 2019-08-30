@@ -7,6 +7,14 @@
  * @package WSU_WP_Lodge
  */
 
+// Classes
+require_once 'classes/class-wsuwp-lodge.php';
+require_once 'classes/class-shortcodes.php';
+
+// Actions
+add_action( 'customize_register', 'wsuLodge::add_social_to_customizer' );
+
+// Underscores Starter
 if ( ! function_exists( 'wsuwp_lodge_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -58,12 +66,6 @@ if ( ! function_exists( 'wsuwp_lodge_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
-
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'wsuwp_lodge_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -146,11 +148,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
