@@ -58,6 +58,16 @@ final class wsuwpLodge {
   }
 
   /**
+  * Sanitize Checkboxes
+  *
+  * @return $checked
+  */
+  static public function sanitize_checkbox( $checked ) {
+    // Boolean check
+    return ( ( isset( $checked ) && true == $checked ) ? true : false );
+  }
+
+  /**
   * Add Social Media links to customizer
   *
   * @return $args
@@ -146,4 +156,41 @@ final class wsuwpLodge {
         )
     ) );
   }
+
+  /**
+  * Add Global Options Customizer Settings
+  *
+  * @return $args
+  */
+  static public function add_global_options_to_customizer( $wp_customize )
+  { 
+
+    //
+    // Create Section
+    //
+    $wp_customize->add_section( 'wsulodge_global_options' , array(
+        'title'      => __( 'Global Options', 'wsuwp-lodge' ),
+        'priority'   => 100,
+        'description'    => __( 'Various site-wide configuration settings that can be modified.', 'wsuwp-lodge' )
+    ) );
+
+    //
+    // Back to Top Button
+    // 
+    $wp_customize->add_setting('wsulodge_global_back_to_top', array(
+        'default'       => 'false',
+        'sanitize_callback' => 'wsuwpLodge::sanitize_checkbox',
+
+    ) );
+
+    $wp_customize->add_control('wsulodge_global_back_to_top', array(
+        'type'          => 'checkbox',
+        'label'         => __( 'Display Back to Top Button', 'wsuwp-lodge' ),
+        'section'       => 'wsulodge_global_options',
+        'settings'      => 'wsulodge_global_back_to_top',
+    ) );
+
+    
+  }
 }
+
