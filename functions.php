@@ -83,6 +83,17 @@ if ( ! function_exists( 'wsuwp_lodge_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Set Default Image Sizes
+		 * 
+		 * @link https://codex.wordpress.org/Function_Reference/update_option
+		 */
+		update_option( 'medium_size_h', 450 );
+		update_option( 'medium_size_w', 450 );
+		update_option( 'large_size_w', 1400 );
+		update_option( 'large_size_h', 1400 );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'wsuwp_lodge_setup' );
