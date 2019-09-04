@@ -15,7 +15,8 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<span class="copyright">&copy; <?php echo do_shortcode('[current_year]');?></span>
+
+			<span class="copyright">&copy; <?php echo WSU_Lodge_Shortcodes::get_current_year(); ?></span>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wsuwp-lodge' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
