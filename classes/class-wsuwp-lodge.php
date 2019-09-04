@@ -234,7 +234,7 @@ final class WSU_WP_Lodge
 		//
 		$wp_customize->add_setting('wsulodge_global_back_to_top', array(
 			'default'           => 'false',
-			'sanitize_callback' => 'wsuwpLodge::sanitize_checkbox',
+			'sanitize_callback' => 'WSU_WP_Lodge::sanitize_checkbox',
 
 		));
 
@@ -262,5 +262,16 @@ final class WSU_WP_Lodge
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		));
+	}
+
+	/**
+	 * Display Back to Top Button
+	 */
+	static public function display_back_to_top() {
+		if ( get_theme_mod('wsulodge_global_back_to_top') == TRUE ) {
+
+			get_template_part( 'template-parts/partial', 'back-to-top' );
+
+		}
 	}
 }

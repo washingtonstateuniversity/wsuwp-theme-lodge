@@ -1,10 +1,10 @@
 <?php
 /**
- * shortcodes class
+ * Shortcodes class
  *
  * @since 1.0.0
  */
-final class WSU_Lodge_Shortcodes
+final class WSU_WP_Lodge_Shortcodes
 {
 
 	/**
@@ -14,7 +14,7 @@ final class WSU_Lodge_Shortcodes
 	 */
 	static public function init()
 	{
-		add_shortcode('current_year', array('WSU_Lodge_Shortcodes', 'get_current_year'));
+		add_shortcode('current_year', array('WSU_WP_Lodge_Shortcodes', 'get_current_year'));
 	}
 
 	/**
@@ -28,4 +28,4 @@ final class WSU_Lodge_Shortcodes
 	}
 
 }
-WSU_Lodge_Shortcodes::init();
+WSU_WP_Lodge_Shortcodes::init();
