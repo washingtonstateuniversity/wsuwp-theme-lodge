@@ -12,8 +12,14 @@ require_once 'classes/class-wsuwp-lodge.php';
 require_once 'classes/class-shortcodes.php';
 
 // Actions
-add_action( 'customize_register', 'wsuwpLodge::add_social_to_customizer' );
-add_action( 'customize_register', 'wsuwpLodge::add_global_options_to_customizer' );
+add_action( 'customize_register', 'WSUWPLodge::add_social_to_customizer' );
+add_action( 'customize_register', 'WSUWPLodge::add_global_options_to_customizer' );
+add_action( 'wp_enqueue_scripts', 'WSUWPLodge::enqueue_scripts' );
+
+// Filters
+add_filter('upload_mimes', 'WSUWPLodge::enable_svg_support', 10, 1);
+
+
 
 
 // Underscores Starter
@@ -50,7 +56,7 @@ if ( ! function_exists( 'wsuwp_lodge_setup' ) ) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		// add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -131,21 +137,7 @@ function wsuwp_lodge_widgets_init() {
 }
 add_action( 'widgets_init', 'wsuwp_lodge_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function wsuwp_lodge_scripts() {
-	wp_enqueue_style( 'wsuwp-lodge-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'wsuwp-lodge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'wsuwp-lodge-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'wsuwp_lodge_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -161,11 +153,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
