@@ -76,7 +76,7 @@ final class wsuwpLodge {
   { 
 
     //
-    // Create Section
+    // Create Social Media Section
     //
     $wp_customize->add_section( 'wsulodge_social_media' , array(
         'title'      => __( 'Social Media', 'wsuwp-lodge' ),
@@ -166,7 +166,7 @@ final class wsuwpLodge {
   { 
 
     //
-    // Create Section
+    // Create Global Options Section
     //
     $wp_customize->add_section( 'wsulodge_global_options' , array(
         'title'      => __( 'Global Options', 'wsuwp-lodge' ),
@@ -175,7 +175,7 @@ final class wsuwpLodge {
     ) );
 
     //
-    // Back to Top Button
+    // Add Back to Top Setting
     // 
     $wp_customize->add_setting('wsulodge_global_back_to_top', array(
         'default'       => false,
@@ -183,6 +183,9 @@ final class wsuwpLodge {
 
     ) );
 
+    //
+    // Add Back to Top Control
+    // 
     $wp_customize->add_control('wsulodge_global_back_to_top', array(
         'type'          => 'checkbox',
         'label'         => __( 'Display Back to Top Button', 'wsuwp-lodge' ),

@@ -176,6 +176,9 @@ function back_to_top(){
 	do_action( 'back_to_top' );
 }
 
+/**
+ * Display Back to Top Button
+ */
 function display_back_to_top() {
 
 	if (get_theme_mod('wsulodge_global_back_to_top') == TRUE ) {
@@ -185,5 +188,4 @@ function display_back_to_top() {
 	}
 
 }
-
 add_action( 'back_to_top', 'display_back_to_top');
