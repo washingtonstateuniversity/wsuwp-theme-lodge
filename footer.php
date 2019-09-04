@@ -13,6 +13,8 @@
 
 	</div><!-- #content -->
 
+	<?php back_to_top(); ?>
+
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<span class="copyright">&copy; <?php echo do_shortcode('[current_year]');?></span>

@@ -178,7 +178,7 @@ final class wsuwpLodge {
     // Back to Top Button
     // 
     $wp_customize->add_setting('wsulodge_global_back_to_top', array(
-        'default'       => 'false',
+        'default'       => false,
         'sanitize_callback' => 'wsuwpLodge::sanitize_checkbox',
 
     ) );

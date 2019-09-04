@@ -169,3 +169,21 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Create Back to Top Action
+ */
+function back_to_top(){
+	do_action( 'back_to_top' );
+}
+
+function display_back_to_top() {
+
+	if (get_theme_mod('wsulodge_global_back_to_top') == TRUE ) {
+		
+		 get_template_part( 'template-parts/partial', 'back-to-top' );
+
+	}
+
+}
+
+add_action( 'back_to_top', 'display_back_to_top');
