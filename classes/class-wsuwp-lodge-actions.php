@@ -7,7 +7,7 @@
 final class WSU_WP_Lodge_Actions
 {
 	/**
-	 * Add Back to Top
+	 * Register Action Callbacks
 	 */
 	static public function init()
 	{
