@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				wsuwp_lodge_posted_on();
-				wsuwp_lodge_posted_by();
+				// wsuwp_lodge_posted_on();
+				// wsuwp_lodge_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php wsuwp_lodge_post_thumbnail(); ?>
+	<?php // wsuwp_lodge_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -54,6 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php wsuwp_lodge_entry_footer(); ?>
+		<?php //wsuwp_lodge_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
