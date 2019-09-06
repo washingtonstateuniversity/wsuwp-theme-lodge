@@ -89,9 +89,7 @@ final class WSU_WP_Lodge
 	{
 		wp_enqueue_style('wsuwp-lodge-style', get_stylesheet_uri());
 
-		wp_enqueue_script('wsuwp-lodge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
-
-		wp_enqueue_script('wsuwp-lodge-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+		wp_enqueue_script('wsuwp-lodge-scripts', get_stylesheet_directory_uri() . '/assets/dist/bundle.js', '', '0.0.1', true);
 
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
