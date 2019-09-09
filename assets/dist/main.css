@@ -348,6 +348,25 @@ template {
   display: none;
 }
 
+@media print {
+  html {
+    background-color: #fff; }
+  body,
+  body.has-background-image,
+  body:not(.has-background-image) {
+    background-image: none;
+    background-color: #fff;
+    min-height: 100%; }
+  a,
+  .sup-header-default a {
+    text-decoration: underline;
+    color: #333; }
+  main {
+    width: 100% !important;
+    margin-left: 0; }
+  .site-footer {
+    display: none; } }
+
 .p-back-to-top_container {
   position: fixed;
   bottom: 20px;
@@ -368,11 +387,6 @@ template {
 
 .p-back-to-top_link:hover {
   background-color: whitesmoke; }
-
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
 
 
 /*# sourceMappingURL=main.css.map*/

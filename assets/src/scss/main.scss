@@ -1,14 +1,14 @@
-//
-// Required Lodge Styles
-//
-
-// Normalize CSS
+//-----------------------------------------
+// Node Modules
+//-----------------------------------------
 @import "~normalize.css/normalize.css";
 
-// Import Partials
-@import "partials/p-back-to-top";
+//-----------------------------------------
+// Base (b)
+//-----------------------------------------
+@import "base/print";
 
-
-body {
-	display: flex;
-}
+//-----------------------------------------
+// Components (c)
+//-----------------------------------------
+@import "components/back-to-top";
