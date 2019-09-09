@@ -1,0 +1,25 @@
+// Unit Variables
+$unit: 1em;
+
+// Color Variables
+$primary: #535925;
+$secondary: #D95F18;
+
+$colors: (
+  primary: (
+    base: $primary,
+	light: lighten($primary, 15%),
+	lighter: lighten($primary, 25%),
+	lightest: lighten($primary, 50%),
+    dark: darken($primary, 15%),
+    trans: transparentize($primary, 0.5)
+  ),
+  secondary: (
+    base: $secondary,
+	light: lighten($secondary, 15%),
+	lighter: lighten($secondary, 25%),
+	lightest: lighten($secondary, 50%),
+    dark: darken($secondary, 15%),
+    trans: transparentize($secondary, 0.5)
+  )
+);

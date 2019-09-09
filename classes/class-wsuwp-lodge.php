@@ -87,11 +87,15 @@ final class WSU_WP_Lodge
 	 */
 	static public function enqueue_scripts()
 	{
-		wp_enqueue_style('wsuwp-lodge-style', get_stylesheet_uri());
+		wp_enqueue_style('wsuwp-lodge-style', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/style.css') );
 
-		wp_enqueue_script('wsuwp-lodge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+		wp_enqueue_style('wsuwp-lodge-webpack-styles', get_stylesheet_directory_uri() . '/assets/dist/main.css', array(), filemtime(get_template_directory() . '/assets/dist/main.css'));
 
-		wp_enqueue_script('wsuwp-lodge-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
+		if (get_theme_mod('wsulodge_global_enable_base_styles')) {
+			wp_enqueue_style('wsuwp-lodge-basic-styles', get_stylesheet_directory_uri() . '/assets/src/base-styles.css', array(), filemtime(get_template_directory() . '/assets/src/base-styles.css'));
+		}
+
+		wp_enqueue_script('wsuwp-lodge-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js', array(), filemtime(get_template_directory() . '/assets/dist/scripts.js'), true);
 
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
@@ -122,130 +126,7 @@ final class WSU_WP_Lodge
 		return ((isset($checked) && true == $checked) ? true : false);
 	}
 
-	/**
-	 * Add Social Media links to customizer
-	 *
-	 * @return $args
-	 */
-	static public function add_social_to_customizer($wp_customize)
-	{
-
-		//
-		// Create Section
-		//
-		$wp_customize->add_section('wsulodge_social_media', array(
-			'title'       => __('Social Media', 'wsuwp-lodge'),
-			'priority'    => 100,
-			'description' => __('Include social media links to be used throughout the website.', 'wsuwp-lodge')
-		));
-
-		//
-		// Facebook
-		//
-		$wp_customize->add_setting('wsulodge_social_media_facebook', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		));
-
-		$wp_customize->add_control('wsulodge_social_media_facebook', array(
-			'label'       => __('Facebook', 'wsuwp-lodge'),
-			'section'     => 'wsulodge_social_media',
-			'settings'    => 'wsulodge_social_media_facebook',
-			'type'        => 'text',
-			'input_attrs' => array(
-				'placeholder' => __('https://facebook.com/WSUPullman', 'wsuwp-lodge')
-			)
-		));
-
-		//
-		// Twitter
-		//
-		$wp_customize->add_setting('wsulodge_social_media_twitter', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		));
-
-		$wp_customize->add_control('wsulodge_social_media_twitter', array(
-			'label'         => __('Twitter', 'wsulodge_social_media'),
-			'section'       => 'wsulodge_social_media',
-			'settings'      => 'wsulodge_social_media_twitter',
-			'type'          => 'text',
-			'input_attrs'   => array(
-				'placeholder' => __('https://twitter.com/WSUPullman', 'wsuwp-lodge')
-			)
-		));
-
-		//
-		// YouTube
-		//
-		$wp_customize->add_setting('wsulodge_social_media_youtube', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		));
-
-		$wp_customize->add_control('wsulodge_social_media_youtube', array(
-			'label'       => __('YouTube', 'wsulodge_social_media'),
-			'section'     => 'wsulodge_social_media',
-			'settings'    => 'wsulodge_social_media_youtube',
-			'type'        => 'text',
-			'input_attrs' => array(
-				'placeholder' => __('https://www.youtube.com/user/washingtonstateuniv', 'wsuwp-lodge')
-			)
-		));
-
-		//
-		// Instagram
-		//
-		$wp_customize->add_setting('wsulodge_social_media_instagram', array(
-			'default'           => '',
-			'sanitize_callback' => 'sanitize_text_field'
-		));
-
-		$wp_customize->add_control('wsulodge_social_media_instagram', array(
-			'label'       => __('Instagram', 'wsulodge_social_media'),
-			'section'     => 'wsulodge_social_media',
-			'settings'    => 'wsulodge_social_media_instagram',
-			'type'        => 'text',
-			'input_attrs' => array(
-				'placeholder' => __('https://www.instagram.com/wsupullman/', 'wsuwp-lodge')
-			)
-		));
-	}
-
-	/**
-	 * Add Global Options Customizer Settings
-	 *
-	 * @return $args
-	 */
-	static public function add_global_options_to_customizer($wp_customize)
-	{
-
-		//
-		// Create Section
-		//
-		$wp_customize->add_section('wsulodge_global_options', array(
-			'title'       => __('Global Options', 'wsuwp-lodge'),
-			'priority'    => 100,
-			'description' => __('Various site-wide configuration settings that can be modified.', 'wsuwp-lodge')
-		));
-
-		//
-		// Back to Top Button
-		//
-		$wp_customize->add_setting('wsulodge_global_back_to_top', array(
-			'default'           => 'false',
-			'sanitize_callback' => 'WSU_WP_Lodge::sanitize_checkbox',
-
-		));
-
-		$wp_customize->add_control('wsulodge_global_back_to_top', array(
-			'type'     => 'checkbox',
-			'label'    => __('Display Back to Top Button', 'wsuwp-lodge'),
-			'section'  => 'wsulodge_global_options',
-			'settings' => 'wsulodge_global_back_to_top',
-		));
-	}
-
+	// TODO Move to own class
 	/**
 	 * Initilize Widgets
 	 *
@@ -262,16 +143,5 @@ final class WSU_WP_Lodge
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		));
-	}
-
-	/**
-	 * Display Back to Top Button
-	 */
-	static public function display_back_to_top() {
-		if ( get_theme_mod('wsulodge_global_back_to_top') == TRUE ) {
-
-			get_template_part( 'template-parts/partial', 'back-to-top' );
-
-		}
 	}
 }
