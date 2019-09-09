@@ -5,8 +5,9 @@
     "private": true,
     "main": "src/index.js",
     "dependencies": {
-        "webpack-cli": "^3.3.8",
-        "webpack": "^4.39.3"
+        "normalize.css": "^8.0.1",
+        "webpack": "^4.39.3",
+        "webpack-cli": "^3.3.8"
     },
     "devDependencies": {
         "autoprefixer": "^9.6.1",
