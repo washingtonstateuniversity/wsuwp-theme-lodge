@@ -368,7 +368,7 @@ template {
     display: none; } }
 
 .site-header {
-  background-color: #e5e8e9;
+  background-color: #d3d9a4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -385,7 +385,7 @@ template {
   padding: 1em; }
 
 .widget-area {
-  background-color: #e5e8e9;
+  background-color: #d3d9a4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
