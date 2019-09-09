@@ -9,16 +9,16 @@ $colors: (
   primary: (
     base: $primary,
 	light: lighten($primary, 15%),
-	light-25: lighten($primary, 25%),
-	light-50: lighten($primary, 50%),
+	lighter: lighten($primary, 25%),
+	lightest: lighten($primary, 50%),
     dark: darken($primary, 15%),
     trans: transparentize($primary, 0.5)
   ),
   secondary: (
     base: $secondary,
 	light: lighten($secondary, 15%),
-	light-25: lighten($secondary, 25%),
-	light-50: lighten($secondary, 50%),
+	lighter: lighten($secondary, 25%),
+	lightest: lighten($secondary, 50%),
     dark: darken($secondary, 15%),
     trans: transparentize($secondary, 0.5)
   )
