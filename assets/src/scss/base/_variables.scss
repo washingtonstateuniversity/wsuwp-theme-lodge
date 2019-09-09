@@ -1,0 +1,22 @@
+// Unit Variables
+$unit: 1em;
+
+// Color Variables
+$colors: (
+  primary: (
+    base: #981e32,
+	light: lighten(#981e32, 15%),
+	light-25: lighten(#981e32, 25%),
+	light-50: lighten(#981e32, 50%),
+    dark: darken(#981e32, 15%),
+    trans: transparentize(#981e32, 0.5)
+  ),
+  secondary: (
+    base: #5e6a71,
+	light: lighten(#5e6a71, 15%),
+	light-25: lighten(#5e6a71, 25%),
+	light-50: lighten(#5e6a71, 50%),
+    dark: darken(#5e6a71, 15%),
+    trans: transparentize(#5e6a71, 0.5)
+  )
+);

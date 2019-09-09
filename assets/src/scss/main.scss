@@ -4,11 +4,20 @@
 @import "~normalize.css/normalize.css";
 
 //-----------------------------------------
-// Base (b)
+// Base
 //-----------------------------------------
+@import "base/variables";
+@import "base/mixins";
 @import "base/print";
 
 //-----------------------------------------
-// Components (c)
+// Globals
+//-----------------------------------------
+@import "globals/header";
+@import "globals/footer";
+@import "globals/widget-area";
+
+//-----------------------------------------
+// Components
 //-----------------------------------------
 @import "components/back-to-top";
