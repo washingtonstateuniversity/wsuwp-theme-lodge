@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part to serve as the default for displaying post types
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,26 +10,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				// wsuwp_lodge_posted_on();
-				// wsuwp_lodge_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+	<?php
+	/*
+	* Include the shared content entry header template
+	*/
+	get_template_part( 'template-parts/content/content', 'entry-header' );
 
-	<?php // wsuwp_lodge_post_thumbnail(); ?>
+	/*
+	* Include the post content entry meta template
+	*/
+	get_template_part( 'template-parts/content/content-post', 'entry-meta' );
+	?>
 
 	<div class="entry-content">
 		<?php
@@ -53,7 +45,10 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php //wsuwp_lodge_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php
+	/*
+	* Include content entry footer
+	*/
+	get_template_part( 'template-parts/content/content-post', 'entry-footer' );
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->
