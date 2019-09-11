@@ -18,8 +18,6 @@
 	get_template_part( 'template-parts/content/content', 'entry-header' );
 	?>
 
-	<?php //wsuwp_lodge_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content();
