@@ -13,7 +13,7 @@
 
 	<?php
 	/*
-	* Include Content Entry Header
+	* Include content entry header
 	*/
 	get_template_part( 'template-parts/content/content', 'entry-header' );
 	?>
@@ -40,7 +40,10 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php //wsuwp_lodge_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php
+	/*
+	* Include content entry footer
+	*/
+	get_template_part( 'template-parts/content/content', 'entry-footer' );
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->
