@@ -25,7 +25,6 @@
 	get_template_part( 'template-parts/global/global', 'footer' );
 	?>
 
-
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Helper class for theme functions.
+ * Class for theme setup
  *
  * @class WSU_WP_Lodge
  */
@@ -173,17 +173,6 @@ final class WSU_WP_Lodge
 		$mimes['svg'] = 'image/svg+xml';
 		return $mimes;
 		// }
-	}
-
-	/**
-	 * Sanitize Checkboxes
-	 *
-	 * @return $checked
-	 */
-	static public function sanitize_checkbox($checked)
-	{
-		// Boolean check
-		return ( ( isset($checked) && true == $checked ) ? true : false );
 	}
 
 	// TODO Move to own class

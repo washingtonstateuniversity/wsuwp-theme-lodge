@@ -9,6 +9,7 @@
  * Classes
  */
 require_once 'classes/class-wsuwp-lodge.php';
+require_once 'classes/class-wsuwp-lodge-helpers.php';
 require_once 'classes/class-wsuwp-lodge-actions.php';
 require_once 'classes/class-wsuwp-lodge-customizer.php';
 require_once 'classes/class-wsuwp-lodge-shortcodes.php';

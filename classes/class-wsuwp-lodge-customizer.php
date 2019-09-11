@@ -130,7 +130,7 @@ final class WSU_WP_Lodge_Customizer
 		//
 		$wp_customize->add_setting('wsulodge_global_back_to_top', array(
 			'default'           => true,
-			'sanitize_callback' => 'WSU_WP_Lodge::sanitize_checkbox',
+			'sanitize_callback' => 'WSU_WP_Lodge_Helpers::sanitize_checkbox',
 
 		));
 
@@ -146,7 +146,7 @@ final class WSU_WP_Lodge_Customizer
 		//
 		$wp_customize->add_setting('wsulodge_global_enable_base_styles', array(
 			'default'           => true,
-			'sanitize_callback' => 'WSU_WP_Lodge::sanitize_checkbox',
+			'sanitize_callback' => 'WSU_WP_Lodge_Helpers::sanitize_checkbox',
 		));
 
 		$wp_customize->add_control('wsulodge_global_enable_base_styles', array(
