@@ -367,8 +367,53 @@ template {
   .site-footer {
     display: none; } }
 
+html {
+  font-size: 18px; }
+
+p {
+  font-size: 1.2em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
+h1 {
+  font-size: 2.98598em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
+h2 {
+  font-size: 2.48832em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
+h3 {
+  font-size: 2.0736em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
+h4 {
+  font-size: 1.728em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
+h5 {
+  font-size: 1.44em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
+h6 {
+  font-size: 1.2em;
+  color: 0;
+  line-height: 0;
+  line-height: 1.33; }
+
 .site-header {
-  background-color: #d3d9a4;
+  background-color: #2ec1b4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -384,19 +429,46 @@ template {
           align-items: center;
   padding: 1em; }
 
-.widget-area {
-  background-color: #d3d9a4;
+.site-content.fixed-width {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.page-template-page-sidebar .site-content {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1em; }
+  display: flex; }
+
+.page-template-page-sidebar .content-area,
+.page-template-page-sidebar .widget-area {
+  padding: 1em;
+  margin: 1em; }
+
+.page-template-page-sidebar .content-area {
+  width: 70%; }
+
+.page-template-page-sidebar .widget-area {
+  width: 30%; }
+
+.has-black-background-color {
+  background-color: #232323; }
+
+.has-white-color {
+  color: #ffffff; }
+
+.alignfull {
+  margin-left: -100%;
+  margin-right: -100%; }
+
+.alignwide {
+  margin-left: -5%;
+  margin-right: -5%; }
+
+.alignfull .wp-block-group__inner-container,
+.alignwide .wp-block-group__inner-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .p-back-to-top_container {
   position: fixed;
