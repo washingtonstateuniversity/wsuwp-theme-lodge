@@ -13,9 +13,14 @@
 
 	<?php
 	/*
-	* Include content entry header
+	* Include the shared content entry header template
 	*/
 	get_template_part( 'template-parts/content/content', 'entry-header' );
+
+	/*
+	* Include the post content entry meta template
+	*/
+	get_template_part( 'template-parts/content/content-post', 'entry-meta' );
 	?>
 
 	<div class="entry-content">
