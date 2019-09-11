@@ -38,17 +38,23 @@ final class WSU_WP_Lodge_Helpers
 	 */
 	static public function get_social_media()
 	{
-		// $facebook_url = WSU_WP_Lodge_Helpers::get_social_media_url('facebook');
-		// $twitter_url = WSU_WP_Lodge_Helpers::get_social_media_url('twitter');
-		// $youtube_url = WSU_WP_Lodge_Helpers::get_social_media_url('youtube');
-		// $instagram_url = WSU_WP_Lodge_Helpers::get_social_media_url('instagram');
+		$icons = array();
 
-		$icons = array(
-			'facebook'  => WSU_WP_Lodge_Helpers::get_social_media_url('facebook'),
-			'twitter'   => WSU_WP_Lodge_Helpers::get_social_media_url('twitter'),
-			'youtube'   => WSU_WP_Lodge_Helpers::get_social_media_url('youtube'),
-			'instagram' => WSU_WP_Lodge_Helpers::get_social_media_url('instagram'),
-		);
+		if ( !empty( WSU_WP_Lodge_Helpers::get_social_media_url('facebook') ) ) {
+			$icons['facebook'] = WSU_WP_Lodge_Helpers::get_social_media_url('facebook');
+		}
+
+		if ( !empty( WSU_WP_Lodge_Helpers::get_social_media_url('twitter') ) ) {
+			$icons['twitter'] = WSU_WP_Lodge_Helpers::get_social_media_url('twitter');
+		}
+
+		if ( !empty( WSU_WP_Lodge_Helpers::get_social_media_url('youtube') ) ) {
+			$icons['youtube'] = WSU_WP_Lodge_Helpers::get_social_media_url('youtube');
+		}
+
+		if ( !empty( WSU_WP_Lodge_Helpers::get_social_media_url('instagram') ) ) {
+			$icons['instagram'] = WSU_WP_Lodge_Helpers::get_social_media_url('instagram');
+		}
 
 		return $icons;
 	}
