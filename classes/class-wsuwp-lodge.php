@@ -147,13 +147,13 @@ final class WSU_WP_Lodge
 	 */
 	static public function enqueue_scripts()
 	{
-		wp_enqueue_style( 'wsuwp-lodge-style', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/style.css') );
-
-		wp_enqueue_style( 'wsuwp-lodge-webpack-styles', get_stylesheet_directory_uri() . '/assets/dist/main.css', array(), filemtime(get_template_directory() . '/assets/dist/main.css') );
-
 		if ( get_theme_mod( 'wsulodge_global_enable_base_styles' ) ) {
 			wp_enqueue_style( 'wsuwp-lodge-basic-styles', get_stylesheet_directory_uri() . '/assets/src/base-styles.css', array(), filemtime(get_template_directory() . '/assets/src/base-styles.css') );
 		}
+
+		wp_enqueue_style( 'wsuwp-lodge-webpack-styles', get_stylesheet_directory_uri() . '/assets/dist/main.css', array(), filemtime(get_template_directory() . '/assets/dist/main.css') );
+
+		wp_enqueue_style( 'wsuwp-lodge-style', get_stylesheet_uri(), array(), filemtime(get_template_directory() . '/style.css') );
 
 		wp_enqueue_script( 'wsuwp-lodge-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js', array(), filemtime(get_template_directory() . '/assets/dist/scripts.js'), true );
 

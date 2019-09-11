@@ -117,7 +117,7 @@ final class WSU_WP_Lodge_Customizer
 	{
 
 		//
-		// Create Section
+		// Create Global Options Section
 		//
 		$wp_customize->add_section('wsulodge_global_options', array(
 			'title'       => __('Global Options', 'wsuwp-lodge'),
@@ -126,7 +126,7 @@ final class WSU_WP_Lodge_Customizer
 		));
 
 		//
-		// Back to Top Button
+		// Back to Top
 		//
 		$wp_customize->add_setting('wsulodge_global_back_to_top', array(
 			'default'           => true,
@@ -142,12 +142,11 @@ final class WSU_WP_Lodge_Customizer
 		));
 
 		//
-		// enable Base Theme Styles
+		// Enable Base Theme Styles
 		//
 		$wp_customize->add_setting('wsulodge_global_enable_base_styles', array(
 			'default'           => true,
 			'sanitize_callback' => 'WSU_WP_Lodge::sanitize_checkbox',
-
 		));
 
 		$wp_customize->add_control('wsulodge_global_enable_base_styles', array(
@@ -155,6 +154,24 @@ final class WSU_WP_Lodge_Customizer
 			'label'    => __('Enable Lodge Base Styles', 'wsuwp-lodge'),
 			'section'  => 'wsulodge_global_options',
 			'settings' => 'wsulodge_global_enable_base_styles',
+		));
+
+		//
+		// Default Page Template Options
+		//
+		$wp_customize->add_setting('wsulodge_global_default_content_width', array(
+			'default' => 'fixed-width'
+		));
+
+		$wp_customize->add_control('wsulodge_global_default_content_width', array(
+			'type'     => 'select',
+			'label'    => __('Default Content Width', 'wsuwp-lodge'),
+			'section'  => 'wsulodge_global_options',
+			'settings' => 'wsulodge_global_default_content_width',
+			'choices'  => array(
+				'full-width' => 'Full Width',
+				'fixed-width' => 'Fixed Width',
+			)
 		));
 	}
 }

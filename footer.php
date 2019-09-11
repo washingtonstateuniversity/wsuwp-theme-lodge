@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<?php do_action('back_to_top'); ?>
+	<?php do_action('WSU_WP_Lodge_back_to_top'); ?>
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
