@@ -7,7 +7,7 @@
  * @package WSU_WP_Lodge
  */
 
- ?>
+?>
 
 <header class="page-header">
 	<?php

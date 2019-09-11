@@ -7,7 +7,8 @@
  * @package WSU_WP_Lodge
  */
 
- ?>
+?>
+
 <footer class="entry-footer">
 	<!-- TODO Figure out what Entry Footer Content goes here -->
 </footer><!-- .entry-footer -->
