@@ -5,23 +5,13 @@
 	@return map-get(map-get($colors, $palette), $tone);
 }
 
+
+
 //
 // Media Queries
 //
 // Example: @include mq('tablet-small') { color: red; }
 //
-
-$breakpoints: (
-	"phone":        400px,
-	"phone-wide":   480px,
-	"phablet":      560px,
-	"tablet-small": 640px,
-	"tablet":       768px,
-	"tablet-wide":  1024px,
-	"desktop":      1248px,
-	"desktop-wide": 1440px
-);
-
 @mixin mq($width, $type: min) {
 	@if map_has_key($breakpoints, $width) {
 		$width: map_get($breakpoints, $width);
@@ -34,12 +24,13 @@ $breakpoints: (
 	}
 }
 
+
+
 //
 // Z-index
 //
 // Example: z-index: z('site-header');
 //
-
 $z-indexes: (
 	"outdated-browser",
 	"modal",
@@ -57,6 +48,8 @@ $z-indexes: (
 	}
 }
 
+
+
 //
 // Strip Units
 //
@@ -64,7 +57,7 @@ $z-indexes: (
 //
 @function strip-unit($number) {
 	@if type-of($number) == 'number' and not unitless($number) {
-	  @return $number / ($number * 0 + 1);
+		@return $number / ($number * 0 + 1);
 	}
 
 	@return $number;
@@ -81,22 +74,62 @@ $z-indexes: (
 
 	// Looping through all characters
 	@for $i from 1 through str-length($string) {
-	  // Do magic
+		// Do magic
 	}
 
 	@return $result;
-  }
+}
+
+
 
 //
 // Font Sizing
 //
-// Example: @include vertical-rythm(ms(1));
-@mixin type-size($font-size) {
-	font-size: ms($font-size);
+// Example: @include font-size(1);
+@mixin font-size($font-size, $line-height: auto, $modifier: 0, $important: false) {
 
-	$font-size: ms($font-size);
-	color: $font-size;
-	line-height: number(#{ms($font-size)}) * 1;
-	line-height: 1 * 1.33;
+	@if (type-of($font-size) == number) {
+		@if (unit($font-size) != "px") {
+			@error "`#{$font-size}` needs to be a pixel value.";
+		}
+	} @else {
+		@error "`#{$font-size}` needs to be a number.";
+	}
+
+	@if ($important == true) {
+		$important: !important;
+	} @else if ($important == false) {
+		$important: null;
+	} @else {
+		@error "`#{$important}` needs to be `true` or `false`.";
+	}
+
+	// We provide a `px` fallback for old IEs not supporting `rem` values.
+	font-size: $font-size $important;
+	font-size: ($font-size / $global-font-size) * 1em $important;
+
+	@if ($line-height == "auto") {
+
+		// Define how many grid lines each text line should span.
+		// By default, we set it to the minimum number of lines necessary
+		// in order to contain the defined font-size, +1 for some breathing room.
+		// This can be modified with the `$modifier` parameter.
+		$lines: ceil($font-size / $global-baseline) + $modifier;
+		$line-height: $lines * $global-baseline;
+
+		line-height: ($line-height / $font-size) $important;
+	}
+
+	@else {
+
+		@if (type-of($line-height) == number or $line-height == "inherit" or $line-height == "normal") {
+			line-height: $line-height $important;
+		}
+
+		@else if ($line-height != 'none' and $line-height != false) {
+			@error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
+		}
+
+	}
 
 }

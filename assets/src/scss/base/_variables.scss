@@ -1,13 +1,24 @@
-// Base Sizes
-$base-font-size: 16px;
-$base-grid-size: 1200px;
+// Global Variables
+$global-font-size: 18px;
+$global-baseline: $global-font-size * 1.8;
+$global-grid-size: 1200px;
 
-// Unit Variables
-$unit: 1em;
-
+// Modular Scale for Headlines
 $modularscale: (
-  base: 1em,
-  ratio: 1.2
+  base: 18px, // match to global var (has to be passed manually for now, sorry)
+  ratio: 1.25 // ratio you'd like your headlines to scale at (see https://www.modularscale.com/?1&em&1.25)
+);
+
+// Breakpoints
+$breakpoints: (
+	"phone":        400px,
+	"phone-wide":   480px,
+	"phablet":      560px,
+	"tablet-small": 640px,
+	"tablet":       768px,
+	"tablet-wide":  1024px,
+	"desktop":      1248px,
+	"desktop-wide": 1440px
 );
 
 // Color Variables
@@ -16,6 +27,7 @@ $secondary: #D95F18;
 $black: #232323;
 $white: #ffffff;
 
+// Color Map for Mixin
 $colors: (
 	primary: (
 		base: $primary,
@@ -40,3 +52,5 @@ $colors: (
 		base: $white,
 	)
 );
+
+
