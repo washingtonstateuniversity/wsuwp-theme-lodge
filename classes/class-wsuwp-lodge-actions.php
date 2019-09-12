@@ -19,7 +19,7 @@ final class WSU_WP_Lodge_Actions
 	 * Display Back to Top Button
 	 */
 	static public function display_back_to_top() {
-		if ( get_theme_mod( 'wsulodge_global_back_to_top' ) == TRUE ) {
+		if ( get_theme_mod( 'wsulodge_global_back_to_top', true ) == TRUE ) {
 
 			get_template_part( 'template-parts/partial', 'back-to-top' );
 
@@ -30,8 +30,7 @@ final class WSU_WP_Lodge_Actions
 	 * Add class to control content width
 	 */
 	static public function content_width() {
-		// echo "working";
-		echo get_theme_mod( 'wsulodge_global_default_content_width' );
+		echo get_theme_mod( 'wsulodge_global_default_content_width', 'fixed-width' );
 	}
 }
 WSU_WP_Lodge_Actions::init();

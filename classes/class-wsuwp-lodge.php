@@ -147,7 +147,7 @@ final class WSU_WP_Lodge
 	 */
 	static public function enqueue_scripts()
 	{
-		if ( get_theme_mod( 'wsulodge_global_enable_base_styles' ) ) {
+		if ( get_theme_mod( 'wsulodge_global_enable_base_styles', true ) ) {
 			wp_enqueue_style( 'wsuwp-lodge-basic-styles', get_template_directory_uri() . '/assets/src/base-styles.css', array(), filemtime(get_template_directory() . '/assets/src/base-styles.css') );
 		}
 
