@@ -157,6 +157,17 @@ final class WSU_WP_Lodge
 
 		wp_enqueue_script( 'wsuwp-lodge-scripts', get_stylesheet_directory_uri() . '/assets/dist/scripts.js', array(), filemtime(get_template_directory() . '/assets/dist/scripts.js'), true );
 
+		$whitelist = array( '127.0.0.1', '::1', '192.168.50.*' );
+		$ip = $_SERVER['REMOTE_ADDR'];
+
+		foreach($whitelist as $i){
+			$wildcardPos = strpos($i, "*");
+
+			if ( $wildcardPos !== false && substr($ip, 0, $wildcardPos) . "*" == $i ) {
+				wp_enqueue_script( 'wsuwp-lodge-livereload', 'http://localhost:35729/livereload.js');
+			}
+		}
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}

@@ -2,6 +2,7 @@ const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 const path = require('path');
 
 module.exports = env => {
@@ -76,6 +77,7 @@ module.exports = env => {
 			new MiniCssExtractPlugin({
 				filename: 'main.css'
 			}),
+			new LiveReloadPlugin(),
 		]
 	}
 };
