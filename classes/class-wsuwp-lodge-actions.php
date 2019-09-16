@@ -30,7 +30,7 @@ final class WSU_WP_Lodge_Actions
 	 * Add class to control content width
 	 */
 	static public function content_width() {
-		echo WSUWP_Lodge_Customizer_Options::get_wsu_wp_lodge_content_width();
+		echo get_theme_mod( 'wsulodge_global_default_content_width', 'fixed-width' );
 	}
 }
 WSU_WP_Lodge_Actions::init();
