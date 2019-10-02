@@ -10,8 +10,14 @@
 //
 // Media Queries
 //
-// Example: @include mq('tablet-small') { color: red; }
+// Example: @include mq('small') { color: red; }
 //
+$breakpoints: (
+	"small":  768px,
+	"medium": 1024px,
+	"large":  1440px,
+);
+
 @mixin mq($width, $type: min) {
 	@if map_has_key($breakpoints, $width) {
 		$width: map_get($breakpoints, $width);
@@ -137,10 +143,21 @@ $z-indexes: (
 
 
 //
-// Clear margin bottom
+// Clear Margin
 //
+// Example: @include clear-margin(left);
 @mixin clear-margin($position: bottom) {
 		margin-#{$position}: 0;
+}
+
+
+
+//
+// Clear Padding
+//
+// Example: @include clear-padding(left);
+@mixin clear-padding($position: bottom) {
+	padding-#{$position}: 0;
 }
 
 
@@ -164,14 +181,16 @@ $z-indexes: (
 }
 
 @mixin column($count: 1) {
-	width: ( $global-grid-size / 12 ) * $count;
-	padding-right: $global-base-unit;
-	padding-left: $global-base-unit;
+	width: percentage($count / 12);
 }
 
 @mixin sidebar() {
 	width: 30%;
-	padding: 0 $global-base-unit;
+}
+
+@mixin gutter() {
+	padding-left: $global-base-unit;
+	padding-right: $global-base-unit;
 }
 
 
