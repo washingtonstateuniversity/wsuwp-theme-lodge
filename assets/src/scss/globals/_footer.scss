@@ -4,6 +4,5 @@
 }
 
 .site-info {
-	max-width: $global-grid-size;
-	margin: 0 auto;
+	@include row('fixed');
 }

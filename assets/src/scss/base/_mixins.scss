@@ -142,3 +142,46 @@ $z-indexes: (
 @mixin clear-margin($position: bottom) {
 		margin-#{$position}: 0;
 }
+
+
+
+//
+// Layout Tools
+//
+// Example: @include row("fixed", 4);
+@mixin row($type: fixed, $padding-modifier: 1) {
+	@if ($type == "fixed") {
+		max-width: $global-grid-size;
+		margin: 0 auto;
+		padding: 0 $global-base-unit * $padding-modifier;
+	}
+
+	@else {
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0 $global-base-unit;
+	}
+}
+
+@mixin column($count: 1) {
+	width: ( $global-grid-size / 12 ) * $count;
+	padding-right: $global-base-unit;
+	padding-left: $global-base-unit;
+}
+
+@mixin sidebar() {
+	width: 30%;
+	padding: 0 $global-base-unit;
+}
+
+
+
+
+//
+// Add required psuedo element properties
+//
+@mixin psuedo($position: relative) {
+	content: "";
+	position: $position;
+	display: block;
+}

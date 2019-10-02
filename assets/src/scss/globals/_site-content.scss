@@ -42,7 +42,5 @@
 
 .alignfull .wp-block-group__inner-container,
 .alignwide .wp-block-group__inner-container {
-	max-width: $global-grid-size;
-	margin-left: auto;
-	margin-right: auto;
+	@include row('fixed');
 }
