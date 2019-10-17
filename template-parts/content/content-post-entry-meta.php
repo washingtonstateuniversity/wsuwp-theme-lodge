@@ -11,4 +11,4 @@
 
 <div class="entry-meta">
 	<!-- TODO Figure out what entry meta content goes here -->
-</footer><!-- .entry-footer -->
+</div><!-- .entry-meta -->

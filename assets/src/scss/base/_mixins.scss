@@ -83,15 +83,15 @@ $z-indexes: (
 @mixin row($type: fixed, $padding-modifier: 1) {
 	@if ($type == "fixed") {
 		max-width: $global-grid-size;
-		margin: 0 auto;
-		padding: 0 $global-base-unit * $padding-modifier;
 	}
 
 	@else {
 		max-width: 100%;
-		margin: 0 auto;
-		padding: 0 $global-base-unit;
 	}
+
+	display: flex;
+	margin: 0 auto;
+	padding: 0 $global-base-unit * $padding-modifier;
 }
 
 @mixin column($count: 1) {

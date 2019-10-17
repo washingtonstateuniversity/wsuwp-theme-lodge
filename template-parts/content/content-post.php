@@ -49,6 +49,6 @@
 	/*
 	* Include content entry footer
 	*/
-	get_template_part( 'template-parts/content/content', 'entry-footer' );
+	get_template_part( 'template-parts/content/content-post', 'entry-footer' );
 	?>
 </article><!-- #post-<?php the_ID(); ?> -->
