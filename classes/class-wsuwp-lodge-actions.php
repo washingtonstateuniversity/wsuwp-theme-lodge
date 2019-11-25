@@ -20,9 +20,7 @@ final class WSU_WP_Lodge_Actions
 	 */
 	static public function display_back_to_top() {
 		if ( get_theme_mod( 'wsulodge_global_back_to_top', true ) == TRUE ) {
-
 			get_template_part( 'template-parts/partial', 'back-to-top' );
-
 		}
 	}
 

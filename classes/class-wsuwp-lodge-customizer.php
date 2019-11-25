@@ -15,7 +15,6 @@ final class WSU_WP_Lodge_Customizer
 	{
 		add_action('customize_register', 'WSU_WP_Lodge_Customizer::add_social_to_customizer');
 		add_action('customize_register', 'WSU_WP_Lodge_Customizer::add_global_options_to_customizer');
-
 	}
 
 	/**
@@ -131,7 +130,6 @@ final class WSU_WP_Lodge_Customizer
 		$wp_customize->add_setting('wsulodge_global_back_to_top', array(
 			'default'           => true,
 			'sanitize_callback' => 'WSU_WP_Lodge_Helpers::sanitize_checkbox',
-
 		));
 
 		$wp_customize->add_control('wsulodge_global_back_to_top', array(

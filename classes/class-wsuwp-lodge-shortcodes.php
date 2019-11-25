@@ -51,7 +51,6 @@ final class WSU_WP_Lodge_Shortcodes
 
 		<?php
 		return ob_get_clean();
-
 	}
 
 }
