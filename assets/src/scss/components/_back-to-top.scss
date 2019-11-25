@@ -1,21 +1,24 @@
 .p-back-to-top_container {
 	position: fixed;
-	bottom: 20px;
 	right: 20px;
+	bottom: 20px;
 }
 
-.p-back-to-top_link{
+.p-back-to-top_link {
 	display: block;
-    background-color: #fff;
-    transform: rotate(-90deg);
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
+
+	width: 50px;
+	height: 50px;
 	padding: 10px;
-	color: white;
-	border: 3px solid black;
+
+	transform: rotate(-90deg);
+
+	color: color(white, base);
+	border: 3px solid color(black, base);
+	border-radius: 100%;
+	background-color: color(white, base);
 }
 
 .p-back-to-top_link:hover {
-	background-color: whitesmoke;
+	background-color: color(white, darken-10);
 }

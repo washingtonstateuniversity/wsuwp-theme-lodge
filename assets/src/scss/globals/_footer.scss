@@ -1,8 +1,9 @@
 .site-footer {
-	background-color: color(primary, base);
 	padding: 20px;
+
+	background-color: color(primary, base);
 }
 
 .site-info {
-	@include row('fixed');
+	@include row("fixed");
 }

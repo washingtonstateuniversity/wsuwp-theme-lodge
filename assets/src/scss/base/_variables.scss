@@ -6,8 +6,8 @@ $global-base-unit: 20px;
 
 // Modular Scale for Headlines
 $modularscale: (
-  base: 18px, // match to global var (has to be passed manually for now, sorry)
-  ratio: 1.25 // ratio you'd like your headlines to scale at (see https://www.modularscale.com/?1&em&1.25)
+	base: 18px, // match to global var (has to be passed manually for now, sorry)
+	ratio: 1.25 // ratio you'd like your headlines to scale at (see https://www.modularscale.com/?1&em&1.25)
 );
 
 // Breakpoints
@@ -24,9 +24,9 @@ $breakpoints: (
 
 // Color Variables
 $primary: #2ec1b4;
-$secondary: #D95F18;
+$secondary: #d95f18;
 $black: #232323;
-$white: #ffffff;
+$white: #fff;
 
 // Color Map for Mixin
 $colors: (
@@ -36,7 +36,7 @@ $colors: (
 		lighter: lighten($primary, 25%),
 		lightest: lighten($primary, 50%),
 		dark: darken($primary, 15%),
-		trans: transparentize($primary, 0.5)
+		trans: transparentize($primary, .5)
 	),
 	secondary: (
 		base: $secondary,
@@ -44,14 +44,13 @@ $colors: (
 		lighter: lighten($secondary, 25%),
 		lightest: lighten($secondary, 50%),
 		dark: darken($secondary, 15%),
-		trans: transparentize($secondary, 0.5)
+		trans: transparentize($secondary, .5)
 	),
 	black: (
 		base: $black,
 	),
 	white: (
 		base: $white,
+		darken-10: darken($white, 10%)
 	)
 );
-
-

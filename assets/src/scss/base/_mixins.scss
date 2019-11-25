@@ -1,16 +1,14 @@
 //
 // Color Mixin
 //
-@function color($palette, $tone: 'base') {
+@function color($palette, $tone: "base") {
 	@return map-get(map-get($colors, $palette), $tone);
 }
-
-
 
 //
 // Media Queries
 //
-// Example: @include mq('small') { color: red; }
+// Example: @include mq("small") { color: red; }
 //
 $breakpoints: (
 	"small":  768px,
@@ -21,21 +19,21 @@ $breakpoints: (
 @mixin mq($width, $type: min) {
 	@if map_has_key($breakpoints, $width) {
 		$width: map_get($breakpoints, $width);
+
 		@if $type == max {
 			$width: $width - 1px;
 		}
+
 		@media only screen and (#{$type}-width: $width) {
 			@content;
 		}
 	}
 }
 
-
-
 //
 // Z-index
 //
-// Example: z-index: z('site-header');
+// Example: z-index: z("site-header");
 //
 $z-indexes: (
 	"outdated-browser",
@@ -48,23 +46,21 @@ $z-indexes: (
 @function z($name) {
 	@if index($z-indexes, $name) {
 		@return (length($z-indexes) - index($z-indexes, $name)) + 1;
-	} @else {
-		@warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+	}
+
+	@else {
+		@warn "There is no item "#{$name}" in this list; choose one of: #{$z-indexes}";
 		@return null;
 	}
 }
-
-
 
 //
 // Clear Margin
 //
 // Example: @include clear-margin(left);
 @mixin clear-margin($position: bottom) {
-		margin-#{$position}: 0;
+	margin-#{$position}: 0;
 }
-
-
 
 //
 // Clear Padding
@@ -74,13 +70,16 @@ $z-indexes: (
 	padding-#{$position}: 0;
 }
 
-
-
 //
 // Layout Tools
 //
 // Example: @include row("fixed", 4);
 @mixin row($type: fixed, $padding-modifier: 1) {
+	display: flex;
+
+	margin: 0 auto;
+	padding: 0 $global-base-unit * $padding-modifier;
+
 	@if ($type == "fixed") {
 		max-width: $global-grid-size;
 	}
@@ -88,10 +87,6 @@ $z-indexes: (
 	@else {
 		max-width: 100%;
 	}
-
-	display: flex;
-	margin: 0 auto;
-	padding: 0 $global-base-unit * $padding-modifier;
 }
 
 @mixin column($count: 1) {
@@ -103,18 +98,17 @@ $z-indexes: (
 }
 
 @mixin gutter() {
-	padding-left: $global-base-unit;
 	padding-right: $global-base-unit;
+	padding-left: $global-base-unit;
 }
-
-
-
 
 //
 // Add required psuedo element properties
 //
 @mixin psuedo($position: relative) {
-	content: "";
 	position: $position;
+
 	display: block;
+
+	content: "";
 }

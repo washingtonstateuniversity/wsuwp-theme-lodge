@@ -1,9 +1,10 @@
+const path = require('path');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
-const path = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = env => {
 	const DEV = env.NODE_ENV === 'development';
@@ -87,6 +88,7 @@ module.exports = env => {
 				filename: 'main.css'
 			}),
 			new LiveReloadPlugin(),
+			new StylelintPlugin(),
 		]
 	}
 };
