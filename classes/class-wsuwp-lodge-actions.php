@@ -19,8 +19,8 @@ final class WSU_WP_Lodge_Actions
 	 * Display Back to Top Button
 	 */
 	static public function display_back_to_top() {
-		if ( get_theme_mod( 'wsulodge_global_back_to_top', true ) == TRUE ) {
-			get_template_part( 'template-parts/partial', 'back-to-top' );
+		if ( get_theme_mod( 'wsulodge_global_back_to_top', true ) == true ) {
+			require get_template_directory() . '/template-parts/global/global-back-to-top.php';
 		}
 	}
 

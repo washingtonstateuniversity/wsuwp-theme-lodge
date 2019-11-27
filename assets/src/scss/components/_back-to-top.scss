@@ -1,10 +1,11 @@
-.p-back-to-top_container {
+.wsuwp-lodge-c_back-to-top_container {
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
+	z-index: z("modal");
 }
 
-.p-back-to-top_link {
+.wsuwp-lodge-c_back-to-top_link {
 	display: block;
 
 	width: 50px;
@@ -14,11 +15,15 @@
 	transform: rotate(-90deg);
 
 	color: color(white, base);
-	border: 3px solid color(black, base);
+	border: 3px solid color(primary, base);
 	border-radius: 100%;
-	background-color: color(white, base);
+	background-color: transparent;
+
+	& > svg {
+		fill: color(primary, base);
+	}
 }
 
-.p-back-to-top_link:hover {
+.wsuwp-lodge-c_back-to-top_link:hover {
 	background-color: color(white, darken-10);
 }
