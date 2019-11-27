@@ -1,6 +1,6 @@
 {
     "name": "wsuwp-theme-lodge",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Parent theme for creating non-wsu branded websites.",
     "private": true,
     "main": "src/index.js",
