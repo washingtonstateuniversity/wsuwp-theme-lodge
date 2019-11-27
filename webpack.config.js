@@ -1,9 +1,10 @@
+const path = require('path');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
-const path = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = env => {
 	const DEV = env.NODE_ENV === 'development';
@@ -26,36 +27,47 @@ module.exports = env => {
 					use: [
 						MiniCssExtractPlugin.loader,
 						{
-							loader: "css-loader",
+							loader: 'css-loader',
 							options: {
 								sourceMap: true
 							}
 						},
 						{
-							loader: "postcss-loader",
+							loader: 'postcss-loader',
 							options: {
-								ident: "postcss",
+								ident: 'postcss',
 								sourceMap: true,
 								plugins: () => [
 									autoprefixer({
 										browsers: [
-											">1%",
-											"last 4 versions",
-											"Firefox ESR",
-											"not ie < 9"
+											'>1%',
+											'last 4 versions',
+											'Firefox ESR',
+											'not ie < 9'
 										]
 									})
 								]
 							}
 						},
 						{
-							loader: "sass-loader",
+							loader: 'sass-loader',
 							options: {
 								sourceMap: true,
 							}
 						}
 					],
-				}
+				},
+				{
+					enforce: 'pre',
+					test: /\.js$/,
+					exclude: /node_modules/,
+					loader: 'eslint-loader',
+				},
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					loader: 'babel-loader',
+				},
 			]
 		},
 		optimization: {
@@ -87,6 +99,7 @@ module.exports = env => {
 				filename: 'main.css'
 			}),
 			new LiveReloadPlugin(),
+			new StylelintPlugin(),
 		]
 	}
 };

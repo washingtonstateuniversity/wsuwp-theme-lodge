@@ -15,6 +15,7 @@ trim_trailing_whitespace = true
 spaces_around_operators = true
 spaces_around_brackets = both
 indent_size = 4
+end_of_line = lf
 
 [*.{txt,md}]
 trim_trailing_whitespace = false

@@ -137,7 +137,6 @@ final class WSU_WP_Lodge
 
 		// Responsive Embedded Content
 		add_theme_support( 'responsive-embeds' );
-
 	}
 
 	/**
@@ -185,5 +184,4 @@ final class WSU_WP_Lodge
 		return $mimes;
 		// }
 	}
-
 }
